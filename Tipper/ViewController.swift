@@ -14,10 +14,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipControl: UISegmentedControl!
+    @IBOutlet weak var outputView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        tipControl.alpha = 0
+        outputView.alpha = 0
+        billField.frame = billField.frame.offsetBy(dx: 0.0, dy: 150.0)
+        outputView.frame = outputView.frame.offsetBy(dx: 0.0, dy: 300.0)
+        tipControl.frame = tipControl.frame.offsetBy(dx: 0.0, dy: 300.0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +40,32 @@ class ViewController: UIViewController {
         let tipPercentages = [0.18, 0.2, 0.25]
         
         let bill = Double(billField.text!) ?? 0
+        if(bill>0){
+            if(tipControl.alpha == 0){
+                UIView.animate(withDuration: 0.7, animations: {
+                    self.tipControl.alpha = 1
+                    self.outputView.alpha = 1
+                    
+                    self.outputView.frame = self.outputView.frame.offsetBy(dx: 0.0, dy: -300.0)
+                    self.tipControl.frame = self.tipControl.frame.offsetBy(dx: 0.0, dy: -300.0)
+                    self.billField.frame = self.billField.frame.offsetBy(dx: 0.0, dy: -150.0)
+                })
+                
+            }
+            
+        }else{
+            if(tipControl.alpha == 1){
+                UIView.animate(withDuration: 0.7, animations: {
+                    self.tipControl.alpha = 0
+                    self.outputView.alpha = 0
+                    self.outputView.frame = self.outputView.frame.offsetBy(dx: 0.0, dy: 300.0)
+                    self.tipControl.frame = self.tipControl.frame.offsetBy(dx: 0.0, dy: 300.0)
+                    self.billField.frame = self.billField.frame.offsetBy(dx: 0.0, dy: 150.0)
+                })
+                
+                
+            }
+        }
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
         let total = bill + tip
         
