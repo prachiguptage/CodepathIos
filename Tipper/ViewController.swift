@@ -49,7 +49,11 @@ class ViewController: UIViewController {
         let segment = defaults.integer(forKey: "segment")
         tipControl.selectedSegmentIndex = segment
         tipControl.sendActions(for: UIControlEvents.valueChanged)
+        
+        billField.becomeFirstResponder();
     }
+    
+    
     
 }
 
