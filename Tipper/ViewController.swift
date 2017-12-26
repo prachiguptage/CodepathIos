@@ -36,8 +36,8 @@ class ViewController: UIViewController {
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
         let total = bill + tip
         
-        tipLabel.text = String(format: "$%.2f",tip)
-        totalLabel.text = String(format: "$%.2f", total)
+        tipLabel.text = String(format: "%@", currencyFormatter(num: tip))
+        totalLabel.text = String(format: "%@", currencyFormatter(num: total))
         
     }
     
@@ -45,12 +45,31 @@ class ViewController: UIViewController {
         
         super.viewWillAppear(animated);
         
+         billField.placeholder = localeSpecificCurrencySymbol()
+        
         let defaults = UserDefaults.standard
         let segment = defaults.integer(forKey: "segment")
         tipControl.selectedSegmentIndex = segment
         tipControl.sendActions(for: UIControlEvents.valueChanged)
         
         billField.becomeFirstResponder();
+    }
+    
+    func currencyFormatter(num : Double)-> String{
+        
+        let number = NSDecimalNumber(decimal: Decimal(num))
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .currency
+        numberFormatter.locale = Locale.current
+        
+        let result = numberFormatter.string(from: number)
+        return result!
+    }
+    
+    func localeSpecificCurrencySymbol() -> String{
+        let locale = Locale.current
+        let currencySymbol = locale.currencySymbol!
+        return currencySymbol
     }
     
     
