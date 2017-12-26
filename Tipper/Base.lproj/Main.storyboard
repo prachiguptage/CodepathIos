@@ -86,7 +86,13 @@
                             <outletCollection property="gestureRecognizers" destination="GNA-gy-TXj" appends="YES" id="5rf-BY-e7H"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Tip Calculator" id="3ju-hL-0hS"/>
+                    <navigationItem key="navigationItem" title="Tip Calculator" id="3ju-hL-0hS">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="190-Mq-qWM">
+                            <connections>
+                                <segue destination="mBs-0S-2Sg" kind="push" id="Th7-Ey-lkR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billField" destination="peP-OZ-BAt" id="Uxa-9W-F8U"/>
                         <outlet property="tipControl" destination="bHc-hD-QFn" id="Rf6-4v-ASD"/>
@@ -102,6 +108,38 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="670" y="146"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="Zxe-73-3VW">
+            <objects>
+                <viewController id="mBs-0S-2Sg" customClass="SettingsViewController" customModule="Tipper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="joY-Nd-qYq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="D5d-2j-41d">
+                                <rect key="frame" x="16" y="89" width="343" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="18%"/>
+                                    <segment title="20%"/>
+                                    <segment title="25%"/>
+                                </segments>
+                                <connections>
+                                    <action selector="tipChange:" destination="mBs-0S-2Sg" eventType="valueChanged" id="IP3-ma-QzR"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EGg-cz-DbQ"/>
+                    <connections>
+                        <outlet property="tipSegment" destination="D5d-2j-41d" id="3vy-z5-0Ji"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lHd-qC-ZNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1059.5" y="116.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IaV-na-hx9">
