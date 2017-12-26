@@ -4,7 +4,7 @@
 
 Submitted by: **Prachi Gupta**
 
-Time spent: **6** hours spent in total
+Time spent: **8** hours spent in total
 
 ## User Stories
 
@@ -27,8 +27,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/eQ3nFVZ.gif' title='Video Walkthrough' width='600' alt='Video Walkthrough' />
-<img src='https://i.imgur.com/mjpDPgz.gif' title='Video Walkthrough' width='600' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/yVIvvyW.gifv' title='Video Walkthrough' width='600' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

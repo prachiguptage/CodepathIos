@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var outputView: UIView!
+    @IBOutlet weak var fourPerson: UILabel!
+    @IBOutlet weak var threePerson: UILabel!
+    @IBOutlet weak var twoPerson: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +74,9 @@ class ViewController: UIViewController {
         
         tipLabel.text = String(format: "%@", currencyFormatter(num: tip))
         totalLabel.text = String(format: "%@", currencyFormatter(num: total))
+        twoPerson.text = String(format: "%@", currencyFormatter(num: total/2))
+        threePerson.text = String(format: "%@", currencyFormatter(num: total/3))
+        fourPerson.text = String(format: "%@", currencyFormatter(num: total/4))
         
         let date:Double = NSDate().timeIntervalSince1970
         let defaults = UserDefaults.standard
