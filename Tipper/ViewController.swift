@@ -39,6 +39,12 @@ class ViewController: UIViewController {
         tipLabel.text = String(format: "%@", currencyFormatter(num: tip))
         totalLabel.text = String(format: "%@", currencyFormatter(num: total))
         
+        let date:Double = NSDate().timeIntervalSince1970
+        let defaults = UserDefaults.standard
+        defaults.set(bill, forKey: "bill")
+        defaults.set(date, forKey: "date")
+        defaults.synchronize()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +54,11 @@ class ViewController: UIViewController {
          billField.placeholder = localeSpecificCurrencySymbol()
         
         let defaults = UserDefaults.standard
+        if NSDate().timeIntervalSince1970 < (defaults.double(forKey: "date") + 10*60){
+            if defaults.double(forKey: "bill")>0 {
+                billField.text = String(defaults.double(forKey: "bill"))
+            }
+        }
         let segment = defaults.integer(forKey: "segment")
         tipControl.selectedSegmentIndex = segment
         tipControl.sendActions(for: UIControlEvents.valueChanged)
