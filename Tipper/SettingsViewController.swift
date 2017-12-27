@@ -11,10 +11,13 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var tipSegment: UISegmentedControl!
+    @IBOutlet weak var themeSegment: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        themeSegment.selectedSegmentIndex = Theme.current.rawValue
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +41,13 @@ class SettingsViewController: UIViewController {
         tipSegment.sendActions(for: UIControlEvents.valueChanged)
     }
     
+    @IBAction func themeChange(_ sender: Any) {
+        if let selectedTheme = Theme(rawValue: themeSegment.selectedSegmentIndex){
+            selectedTheme.apply()
+            
+        }
+        themeSegment.selectedSegmentIndex = Theme.current.rawValue
+    }
     
     
 

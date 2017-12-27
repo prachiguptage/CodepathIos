@@ -15,6 +15,7 @@
 		132D00D21FF1E11C0074408D /* TipperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132D00D11FF1E11C0074408D /* TipperTests.swift */; };
 		132D00DD1FF1E11C0074408D /* TipperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132D00DC1FF1E11C0074408D /* TipperUITests.swift */; };
 		132D00EB1FF1F3510074408D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132D00EA1FF1F3510074408D /* SettingsViewController.swift */; };
+		132D00F11FF3065E0074408D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132D00F01FF3065E0074408D /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		132D00DC1FF1E11C0074408D /* TipperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipperUITests.swift; sourceTree = "<group>"; };
 		132D00DE1FF1E11C0074408D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		132D00EA1FF1F3510074408D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		132D00F01FF3065E0074408D /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				132D00BC1FF1E11C0074408D /* AppDelegate.swift */,
 				132D00BE1FF1E11C0074408D /* ViewController.swift */,
 				132D00C01FF1E11C0074408D /* Main.storyboard */,
+				132D00F01FF3065E0074408D /* Theme.swift */,
 				132D00EA1FF1F3510074408D /* SettingsViewController.swift */,
 				132D00C31FF1E11C0074408D /* Assets.xcassets */,
 				132D00C51FF1E11C0074408D /* LaunchScreen.storyboard */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				132D00BF1FF1E11C0074408D /* ViewController.swift in Sources */,
+				132D00F11FF3065E0074408D /* Theme.swift in Sources */,
 				132D00BD1FF1E11C0074408D /* AppDelegate.swift in Sources */,
 				132D00EB1FF1F3510074408D /* SettingsViewController.swift in Sources */,
 			);
